@@ -1,0 +1,16 @@
+$coolColor: red;
+
+
+body{
+  color: $coolColor;
+}
+
+h2{
+  font-size: 15px;
+  color: $coolColor;
+}
+
+p{
+  color: $coolColor;
+  font-style: italic;
+}
