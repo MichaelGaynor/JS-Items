@@ -48,15 +48,17 @@ var rangeArray = [];
     }
   })
 
-//
+//Pop out the elements to individual variables
 var titleString3 = rangeArray.pop();
 var titleString2 = rangeArray.pop();
 var titleString1 = rangeArray.pop();
 
+//Essentially unnecessary extra step, i think
 var answer2a = titleString1;
 var answer2b = titleString2;
 var answer2c = titleString3;
 
+//Introduce the popped elements into the html
 var answerTwoA = document.querySelector('#answerTwoA')
 var textNode =document.createTextNode(answer2a);
 answerTwoA.appendChild(textNode);
