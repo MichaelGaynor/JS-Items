@@ -8,32 +8,24 @@ var prices = items.map( function(item){
   return item.price;
 
 });
- // console.log(prices);
  
  //Add all the prices together
  var sum = prices.reduce(function(previous, next){
   return previous + next;
-
 });
-// console.log(sum);
 
 //Divide by total number of items
 var avg = sum / items.length;
 
-// console.log(avg);
-
 //Convert to 2 decimal places
 var converted = avg.toFixed(2);
 
-// console.log(converted);
-
 //Make it a string
- var str = 'The average price is ' + converted;
+ var str = 'The average price is $' + converted;
 
 //Make it show up on the page
 var answerOne = document.querySelector('#answerOne')
 var textNode = document.createTextNode(str);
-
 answerOne.appendChild(textNode);
 
 
@@ -98,40 +90,54 @@ answerThreeB.appendChild(textNode);
 
 //QUESTION NUMBER FOUR
 
-var woodArray = [];
+// var woodArray = [];
 
-var woodish = items.filter(function(obj){
-  if (obj.materials.indexOf("wood") !== -1){
-    woodArray.push(obj.title);
-  }
+// var woodish = items.filter(function(obj){
+//   if (obj.materials.indexOf("wood") !== -1){
+//     woodArray.push(obj.title);
+//   }
+// });
+// console.log(woodArray);
+
+// var item1 = woodArray.shift();
+// var item2 = woodArray.shift();
+// var item3 = woodArray.shift();
+// var item4 = woodArray.shift();
+// var item5 = woodArray.shift();
+
+// var answerFourA = document.querySelector('#answerFourA')
+// var textNode = document.createTextNode(item1)
+// answerFourA.appendChild(textNode);
+
+// var answerFourB = document.querySelector('#answerFourB')
+// var textNode = document.createTextNode(item2)
+// answerFourB.appendChild(textNode);
+
+// var answerFourC = document.querySelector('#answerFourC')
+// var textNode = document.createTextNode(item3)
+// answerFourC.appendChild(textNode);
+
+// var answerFourD = document.querySelector('#answerFourD')
+// var textNode = document.createTextNode(item4)
+// answerFourD.appendChild(textNode);
+
+// var answerFourE = document.querySelector('#answerFourE')
+// var textNode = document.createTextNode(item5)
+// answerFourE.appendChild(textNode);
+
+
+var woodish3 = [];
+
+var woodish = items.filter(function (obj){
+  return obj.materials.indexOf('wood') !== -1;
 });
-console.log(woodArray);
 
-var item1 = woodArray.shift();
-var item2 = woodArray.shift();
-var item3 = woodArray.shift();
-var item4 = woodArray.shift();
-var item5 = woodArray.shift();
+var woodish1 = woodish.filter(function (obj){
+    woodish3.push(obj.title);
+});
 
-var answerFourA = document.querySelector('#answerFourA')
-var textNode = document.createTextNode(item1)
-answerFourA.appendChild(textNode);
+  addList('#answerFour', woodish3);
 
-var answerFourB = document.querySelector('#answerFourB')
-var textNode = document.createTextNode(item2)
-answerFourB.appendChild(textNode);
-
-var answerFourC = document.querySelector('#answerFourC')
-var textNode = document.createTextNode(item3)
-answerFourC.appendChild(textNode);
-
-var answerFourD = document.querySelector('#answerFourD')
-var textNode = document.createTextNode(item4)
-answerFourD.appendChild(textNode);
-
-var answerFourE = document.querySelector('#answerFourE')
-var textNode = document.createTextNode(item5)
-answerFourE.appendChild(textNode);
 
 //QUESTION NUMBER FIVE
 //Creates paragraph
@@ -164,9 +170,6 @@ madeOf.forEach(function(obj){
   addParagraph('#answerFive', obj.title + ' has ' + obj.materials.length + ' materials:');
   addList('#answerFive', obj.materials);
 })
-
-
-
 
 
 
