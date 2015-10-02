@@ -96,6 +96,56 @@ answerThreeB.appendChild(textNode);
 
 //QUESTION NUMBER FOUR
 
+var woodArray = [];
+
+var woodish = items.filter(function(obj){
+  if (obj.materials.indexOf("wood") !== -1){
+    woodArray.push(obj.title);
+  }
+});
+console.log(woodArray);
+
+var item1 = woodArray.shift();
+var item2 = woodArray.shift();
+var item3 = woodArray.shift();
+var item4 = woodArray.shift();
+var item5 = woodArray.shift();
+
+var answerFourA = document.querySelector('#answerFourA')
+var textNode = document.createTextNode(item1)
+answerFourA.appendChild(textNode);
+
+var answerFourB = document.querySelector('#answerFourB')
+var textNode = document.createTextNode(item2)
+answerFourB.appendChild(textNode);
+
+var answerFourC = document.querySelector('#answerFourC')
+var textNode = document.createTextNode(item3)
+answerFourC.appendChild(textNode);
+
+var answerFourD = document.querySelector('#answerFourD')
+var textNode = document.createTextNode(item4)
+answerFourD.appendChild(textNode);
+
+var answerFourE = document.querySelector('#answerFourE')
+var textNode = document.createTextNode(item5)
+answerFourE.appendChild(textNode);
+
+//QUESTION NUMBER FIVE
+
+var materialsArray = [];
+
+
+//QUESTION NUMBER SIX
+
+var creatorArray = [];
+
+items.filter(function(maker){
+  if (maker.who_made === 'i_did'){
+    creatorArray.push(maker.title)
+  }
+
+});
 
 
 
