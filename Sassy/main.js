@@ -133,7 +133,17 @@ answerFourE.appendChild(textNode);
 
 //QUESTION NUMBER FIVE
 
-var materialsArray = [];
+
+var madeOf = items.filter(function(obj){
+  if (obj.materials.length > 7){
+    return true
+  }
+  else {
+    return false;
+  }
+});
+
+console.log(madeOf);
 
 
 //QUESTION NUMBER SIX
@@ -143,9 +153,13 @@ var creatorArray = [];
 items.filter(function(maker){
   if (maker.who_made === 'i_did'){
     creatorArray.push(maker.title)
-  }
-
+  };
 });
+var sellerInfo = creatorArray.length + ' were made by their sellers';
+
+var answerSix = document.querySelector('#answerSix')
+var textNode = document.createTextNode(sellerInfo)
+answerSix.appendChild(textNode);
 
 
 
