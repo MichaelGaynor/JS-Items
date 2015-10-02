@@ -132,18 +132,40 @@ var textNode = document.createTextNode(item5)
 answerFourE.appendChild(textNode);
 
 //QUESTION NUMBER FIVE
-
+//Creates paragraph
+function addParagraph(selector, text){
+  var container = document.querySelector(selector);
+  var p = document.createElement('p');
+  var node = document.createTextNode(text);
+  p.appendChild(node);
+  container.appendChild(p);
+}
+//Creates list
+function addList(selector, list){
+  var container = document.querySelector(selector);
+  var ul = document.createElement('ul');
+  list.forEach(function(item){
+    var li = document.createElement('li');
+    var node = document.createTextNode(item);
+    li.appendChild(node);
+    ul.appendChild(li);
+  });
+container.appendChild(ul);
+}
 
 var madeOf = items.filter(function(obj){
   if (obj.materials.length > 7){
     return true
   }
-  else {
-    return false;
-  }
 });
+madeOf.forEach(function(obj){
+  addParagraph('#answerFive', obj.title + ' has ' + obj.materials.length + ' materials:');
+  addList('#answerFive', obj.materials);
+})
 
-console.log(madeOf);
+
+
+
 
 
 //QUESTION NUMBER SIX
