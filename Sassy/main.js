@@ -1,33 +1,31 @@
 (function (){
 
 
-// items.forEach ( function(item){
-// console.log(item.price);
-
 // }); 
 
+//QUESTION NUMBER ONE
 var prices = items.map( function(item){
   return item.price;
 
 });
- console.log(prices);
+ // console.log(prices);
  
  //Add all the prices together
  var sum = prices.reduce(function(previous, next){
   return previous + next;
 
 });
-console.log(sum);
+// console.log(sum);
 
 //Divide by total number of items
 var avg = sum / items.length;
 
-console.log(avg);
+// console.log(avg);
 
 //Convert to 2 decimal places
 var converted = avg.toFixed(2);
 
-console.log(converted);
+// console.log(converted);
 
 //Make it a string
  var str = 'The average price is ' + converted;
@@ -39,19 +37,52 @@ var textNode = document.createTextNode(str);
 answerOne.appendChild(textNode);
 
 
-// console.log(items)
-// var priceArray = [];
+
+//QUESTION NUMBER TWO
+var rangeArray = [];
+
+  //Filter for price range
+  items.filter(function(value){
+    if (value.price > 14 && value.price < 18){
+      rangeArray.push(value.title);
+    }
+  })
+
+//
+var titleString3 = rangeArray.pop();
+var titleString2 = rangeArray.pop();
+var titleString1 = rangeArray.pop();
+
+var answer2a = titleString1;
+var answer2b = titleString2;
+var answer2c = titleString3;
+
+var answerTwoA = document.querySelector('#answerTwoA')
+var textNode =document.createTextNode(answer2a);
+answerTwoA.appendChild(textNode);
+
+var answerTwoB = document.querySelector('#answerTwoB')
+var textNode =document.createTextNode(answer2b);
+answerTwoB.appendChild(textNode);
+
+var answerTwoC = document.querySelector('#answerTwoC')
+var textNode =document.createTextNode(answer2c);
+answerTwoC.appendChild(textNode);
 
 
 
-// items.map(function(){
-//   for(i =0; i < items.length; i++)
-//   var item = items[i].price * parseInt(items[i].quantity);
-//   priceArray.push(item);
+//QUESTION NUMBER THREE
 
-// })
+var currencyArray = [];
+
+items.filter(function(value){
+  if (value.currency_code === "GBP"){
+    currencyArray.push(value.title, value.price)
+  }
+});
+
+var aspectOne
 
 
-// console.log(priceArray);
 
 })();
