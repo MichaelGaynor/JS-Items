@@ -81,7 +81,21 @@ items.filter(function(value){
   }
 });
 
-var aspectOne
+var aspect2 = currencyArray.pop();
+var aspect1 = currencyArray.pop();
+
+var answerThreeA = document.querySelector('#answerThreeA')
+var textNode = document.createTextNode(aspect1)
+answerThreeA.appendChild(textNode);
+
+var answerThreeB = document.querySelector('#answerThreeB')
+var textNode = document.createTextNode(aspect2)
+answerThreeB.appendChild(textNode);
+
+
+
+//QUESTION NUMBER FOUR
+
 
 
 

@@ -1,10 +1,10 @@
 body {
-  color: red; }
+  color: #6A6A6A; }
 
-h2 {
-  font-size: 15px;
-  color: red; }
+h3 {
+  color: #6A6A6A;
+  text-align: center; }
 
 p {
-  color: red;
-  font-style: italic; }
+  color: #6A6A6A;
+  text-align: center; }
