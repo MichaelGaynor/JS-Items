@@ -1,8 +1,6 @@
 (function (){
 
 
-// }); 
-
 //QUESTION NUMBER ONE
 var prices = items.map( function(item){
   return item.price;
